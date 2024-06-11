@@ -1,0 +1,29 @@
+services:
+  webserver:
+#    image: my_custom_image:v5
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - clado-test-vol:/var/www/html/
+    ports:
+      - 80:80
+    networks:
+      - clado-test-net
+    
+  dbserver:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    networks:
+      - clado-test-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=Password123*
+
+networks:
+  clado-test-net:
+
+volumes:
+  clado-test-vol:
+  
+  
