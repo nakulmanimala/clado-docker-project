@@ -7,13 +7,6 @@ function getYear() {
 
 getYear();
 
-// overlay menu
-function openNav() {
-    document.getElementById("myNav").classList.toggle("menu_width");
-    document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
-}
-
-
 /** google_map js **/
 
 function myMap() {
@@ -23,9 +16,3 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
-
-// lightbox gallery
-$(document).on("click", '[data-toggle="lightbox"]', function (event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-});
